@@ -5,34 +5,46 @@
 # the sum. This is what you'd consider to be a regular, normal function.
 
 # YOUR CODE HERE
-
-print(f1(1, 2))
+def f1(num1, num2):
+    return num1+num2
+print(f1(1, 2), '<-- print 3')
 
 # Write a function f2 that takes any number of integer arguments and returns the
+def f2(*args):
+    return sum(args)
+print(f2(10), '<-- print 10')
+print(f2(10, 16), '<-- print 26')
 # sum.
 # Note: Google for "python arbitrary arguments" and look for "*args"
-
+print('') #white space
 # YOUR CODE HERE
 
-print(f2(1))                    # Should print 1
+print(f2(1),'<-- list begin')                    # Should print 1
 print(f2(1, 3))                 # Should print 4
 print(f2(1, 4, -12))            # Should print -7
-print(f2(7, 9, 1, 3, 4, 9, 0))  # Should print 33
+print(f2(7, 9, 1, 3, 4, 9, 0),'<-- list end')  # Should print 33
 
 a = [7, 6, 5, 4]
 
+print('') #white space
+
 # How do you have to modify the f2 call below to make this work?
-print(f2(a))    # Should print 22
+print(f2(*a),'<-- Print 22')    # Should print 22
 
 # Write a function f3 that accepts either one or two arguments. If one argument,
 # it returns that value plus 1. If two arguments, it returns the sum of the
 # arguments.
 # Note: Google "python default arguments" for a hint.
-
+print('') #white space
 # YOUR CODE HERE
+def f3(*args):
+    if len(args) > 1:
+        return sum(args)
+    else:
+        return sum(args)+1
 
-print(f3(1, 2))  # Should print 3
-print(f3(8))     # Should print 9
+print(f3(1, 2), 'Should print 3')  # Should print 3
+print(f3(8), 'Should print 9')     # Should print 9
 
 
 # Write a function f4 that accepts an arbitrary number of keyword arguments and
