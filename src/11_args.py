@@ -57,6 +57,10 @@ print(f3(8), 'Should print 9')     # Should print 9
 
 # YOUR CODE HERE
 
+def f4(**args):
+    for k, v in args.items():
+        print(f"{k}:{v}")
+
 # Should print
 # key: a, value: 12
 # key: b, value: 30
@@ -74,4 +78,4 @@ d = {
 }
 
 # How do you have to modify the f4 call below to make this work?
-f4(d)
+f4(**d)
