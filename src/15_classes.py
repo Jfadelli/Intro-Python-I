@@ -14,8 +14,8 @@ class LatLon:
 class Waypoint(LatLon):
     def __init__(self, name, lat, lon):
         self.name = name    
-        self.lat = lat
-        self.lon = lon
+        # self.lat = lat <-- not needed because of super from LatLon
+        # self.lon = lon <-- not needed because of super from LatLon
         super().__init__(lat, lon)
     def __str__(self):
         return f"{self.name}, {self.lat}, {self.lon}"
@@ -24,14 +24,14 @@ class Waypoint(LatLon):
 # `size`, `lat`, and `lon` to the constructor. What should it inherit from?
 
 # YOUR CODE HERE
-class Geocache(LatLon):
+class Geocache(Waypoint):
     def __init__(self, name, difficulty, size, lat, lon):
-        self.name = name
+        # self.name = name <-- not needed because of super from Waypoint
         self.difficulty = difficulty
         self.size= size
-        self.lat = lat
-        self.lon = lon
-        super().__init__(lat, lon)
+        # self.lat = lat <-- not needed because of super from Waypoint
+        # self.lon = lon<-- not needed because of super from Waypoint
+        super().__init__(lat, lon, name)
     def __str__(self):
         return f"{self.name}, diff {self.difficulty}, size {self.size}, {self.lat}, {self.lon}"
 
